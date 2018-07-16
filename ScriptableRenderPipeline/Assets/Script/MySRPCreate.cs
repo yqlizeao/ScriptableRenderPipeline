@@ -6,11 +6,19 @@ using UnityEngine.Rendering;
 
 public class MySRPCreate  {
 
-    [MenuItem("Leo/CreateMySRP")]
-    public static void CreateSRP()
+    [MenuItem("自定义渲染管线/CreateBasicSRP")]
+    public static void CreateBasicSRP()
     {
         var instance = ScriptableObject.CreateInstance<BasicAssetPipe>();
         AssetDatabase.CreateAsset(instance, "Assets/MyScriptableRenderPipeline.asset");
         GraphicsSettings.renderPipelineAsset = instance;
     }
+    [MenuItem("自定义渲染管线/CreateUnlitSRP")]
+    public static void CreateUnlitSRP()
+    {
+        var instance = ScriptableObject.CreateInstance<UnlitAssetPipe>();
+        AssetDatabase.CreateAsset(instance, "Assets/UnlitScriptableRenderPipeline.asset");
+        GraphicsSettings.renderPipelineAsset = instance;
+    }
+
 }
