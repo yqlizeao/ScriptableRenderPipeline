@@ -20,5 +20,12 @@ public class MySRPCreate  {
         AssetDatabase.CreateAsset(instance, "Assets/UnlitScriptableRenderPipeline.asset");
         GraphicsSettings.renderPipelineAsset = instance;
     }
+    [MenuItem("自定义渲染管线/CreateBaseLightSRP")]
+    public static void CreateBaseLightSRP()
+    {
+        var instance = ScriptableObject.CreateInstance<BaseLightAssetPipe>();
+        AssetDatabase.CreateAsset(instance, "Assets/BaseLightScriptableRenderPipeline.asset");
+        GraphicsSettings.renderPipelineAsset = instance;
+    }
 
 }
